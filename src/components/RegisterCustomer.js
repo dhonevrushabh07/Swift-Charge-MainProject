@@ -31,6 +31,7 @@ function RegisterCust() {
     if (Object.keys(formErrors).length === 0 && isSubmit)
       console.log(formErrors);
   }, [formErrors]);
+
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -61,15 +62,17 @@ function RegisterCust() {
     return errors;
   };
   return (
-    <div className="container bg-black">
+    <div className="container ">
       {/* <h1 className="text-light">This is Registration Page</h1> */}
       <form onSubmit={handleSubmit}>
         <div className="row justify-content-center m-0 ">
-          <div
-            className="col-6 d-flex align-items-center flex-column justify-content-center"
-            style={{ height: "700px", backgroundColor: "#48C9B0" }}
-          >
-            <h3 className="text-center">Registration Form</h3>
+          <div className="col-12 col-md-6 d-flex align-items-center flex-column justify-content-center h">
+            <h3
+              className="text-center text-light "
+              style={{ textDecoration: "underline" }}
+            >
+              Registration Form
+            </h3>
             {Object.keys(formErrors).length === 0 && isSubmit ? (
               <h3 className="ui message success text-light">
                 Registered Successfuly
@@ -80,7 +83,7 @@ function RegisterCust() {
               </pre>
             )}
             <div>
-              <div className="fs-5 text-dark fw-bold">User Name</div>
+              <div className="fs-5 text-light fw-bold">User Name</div>
               <input
                 className="form-control"
                 style={{ width: "300px" }}
@@ -90,11 +93,11 @@ function RegisterCust() {
                 value={formValues.username}
                 onChange={handleChange}
               />
-              <p>{formErrors.username}</p>
+              <p className="text-danger">{formErrors.username}</p>
             </div>
 
             <div>
-              <div className="fs-5 text-dark fw-bold">Email Id</div>
+              <div className="fs-5 text-light fw-bold">Email Id</div>
               <input
                 className="form-control"
                 style={{ width: "300px" }}
@@ -104,11 +107,11 @@ function RegisterCust() {
                 value={formValues.email}
                 onChange={handleChange}
               />
-              <p>{formErrors.email}</p>
+              <p className="text-danger">{formErrors.email}</p>
             </div>
 
             <div>
-              <div className="fs-5 text-dark fw-bold">Phone Number </div>
+              <div className="fs-5 text-light fw-bold">Phone Number </div>
               <input
                 className="form-control"
                 style={{ width: "300px" }}
@@ -118,11 +121,11 @@ function RegisterCust() {
                 value={formValues.phone}
                 onChange={handleChange}
               />
-              <p>{formErrors.phone}</p>
+              <p className="text-danger">{formErrors.phone}</p>
             </div>
 
             <div>
-              <div className="fs-5 text-dark fw-bold">Password</div>
+              <div className="fs-5 text-light fw-bold">Password</div>
               <input
                 className="form-control"
                 style={{ width: "300px" }}
@@ -132,11 +135,11 @@ function RegisterCust() {
                 value={formValues.password}
                 onChange={handleChange}
               />
-              <p>{formErrors.password}</p>
+              <p className="text-danger">{formErrors.password}</p>
             </div>
 
             <div>
-              <div className="fs-5 text-dark fw-bold">Confirm Password</div>
+              <div className="fs-5 text-light fw-bold">Confirm Password</div>
               <input
                 className="form-control"
                 style={{ width: "300px" }}
@@ -146,7 +149,7 @@ function RegisterCust() {
                 value={formValues.conpassword}
                 onChange={handleChange}
               />
-              <p>{formErrors.conpassword}</p>
+              <p className="text-danger">{formErrors.conpassword}</p>
             </div>
 
             <div>
