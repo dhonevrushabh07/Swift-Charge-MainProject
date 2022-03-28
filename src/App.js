@@ -12,14 +12,15 @@ function App() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundColor: "rgba(0,0,0,0.3)",
+        height: "100vh",
       }}
     >
       {" "}
       <Header />
       <div>This is HomePage</div>
-      <RegisterCust />
+      {/* <RegisterCust /> */}
       {/* <RequestForStation /> */}
-      {/* <BookSlot /> */}
+      <BookSlot />
     </div>
   );
 }

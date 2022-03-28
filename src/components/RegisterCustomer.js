@@ -65,13 +65,16 @@ function RegisterCust() {
     <div className="container ">
       {/* <h1 className="text-light">This is Registration Page</h1> */}
       <form onSubmit={handleSubmit}>
-        <div className="row justify-content-center m-0 ">
-          <div className="col-12 col-md-6 d-flex align-items-center flex-column justify-content-center h">
+        <div
+          className="row justify-content-center m-0 "
+          style={{ height: "100vh" }}
+        >
+          <div className="col-12 col-md-6 d-flex align-items-center flex-column justify-content-center ">
             <h3
               className="text-center text-light "
               style={{ textDecoration: "underline" }}
             >
-              Registration Form
+              Registration
             </h3>
             {Object.keys(formErrors).length === 0 && isSubmit ? (
               <h3 className="ui message success text-light">
@@ -83,7 +86,7 @@ function RegisterCust() {
               </pre>
             )}
             <div>
-              <div className="fs-5 text-light fw-bold">User Name</div>
+              {/* <div className="fs-5 text-light fw-bold">User Name</div> */}
               <input
                 className="form-control"
                 style={{ width: "300px" }}
@@ -97,7 +100,7 @@ function RegisterCust() {
             </div>
 
             <div>
-              <div className="fs-5 text-light fw-bold">Email Id</div>
+              {/* <div className="fs-5 text-light fw-bold">Email Id</div> */}
               <input
                 className="form-control"
                 style={{ width: "300px" }}
@@ -111,7 +114,7 @@ function RegisterCust() {
             </div>
 
             <div>
-              <div className="fs-5 text-light fw-bold">Phone Number </div>
+              {/* <div className="fs-5 text-light fw-bold">Phone Number </div> */}
               <input
                 className="form-control"
                 style={{ width: "300px" }}
@@ -125,7 +128,7 @@ function RegisterCust() {
             </div>
 
             <div>
-              <div className="fs-5 text-light fw-bold">Password</div>
+              {/* <div className="fs-5 text-light fw-bold">Password</div> */}
               <input
                 className="form-control"
                 style={{ width: "300px" }}
@@ -139,7 +142,7 @@ function RegisterCust() {
             </div>
 
             <div>
-              <div className="fs-5 text-light fw-bold">Confirm Password</div>
+              {/* <div className="fs-5 text-light fw-bold">Confirm Password</div> */}
               <input
                 className="form-control"
                 style={{ width: "300px" }}
