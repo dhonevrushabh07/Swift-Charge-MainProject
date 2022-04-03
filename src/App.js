@@ -3,24 +3,18 @@ import Header from "./components/Header";
 import RegisterCust from "./components/RegisterCustomer";
 import RequestForStation from "./components/RequestForStation";
 import i1 from "./images/i1.jpg";
+import GMap from "./components/GMap";
+import BFooter from "./components/BFooter";
+import Home from "./components/Home";
+import HomeContent from "./components/HomeContent";
+import NewStylePage from "./components/ReqForStation";
 
 function App() {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${i1})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundColor: "rgba(0,0,0,0.3)",
-        height: "100vh",
-      }}
-    >
-      {" "}
+    <div>
       <Header />
-      <div>This is HomePage</div>
-      {/* <RegisterCust /> */}
-      {/* <RequestForStation /> */}
-      <BookSlot />
+      {/* <NewStylePage /> */}
+      <BFooter />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import "./formBorder.css";
+import i1 from "../images/i1.jpg";
 
 function RequestForStation() {
   const {
@@ -16,15 +17,28 @@ function RequestForStation() {
   };
   //console.log(errors);
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url(${i1})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundColor: "rgba(0,0,0,0.3)",
+        height: "100vh",
+      }}
+    >
       <div
-        className="col-12 col-md-12 d-flex align-items-center flex-column justify-content-center  "
+        className="col-12 col-md-12 d-flex align-items-center flex-column justify-content-center "
         style={{ height: "100vh" }}
       >
-        <form onSubmit={handleSubmit(onsubmit)} action="">
+        <form
+          onSubmit={handleSubmit(onsubmit)}
+          action=""
+          className="bg-light d-flex align-items-center flex-column justify-content-center p-5 "
+          style={{ width: "600px", borderRadius: "20px" }}
+        >
           <div>
             <h3
-              className="text-light text-center"
+              className="text-dark text-center"
               style={{ textDecoration: "underline" }}
             >
               Station Registration
@@ -34,7 +48,12 @@ function RequestForStation() {
               className={`form-control my-1  ${
                 errors.registrationNumber && "invalid"
               }`}
-              style={{ width: "300px" }}
+              style={{
+                width: "400px",
+                borderRadius: "20px",
+                height: "50px",
+                fontWeight: "bold",
+              }}
               type="text"
               name="registrationNumber"
               placeholder="Registration Number"
@@ -47,11 +66,11 @@ function RequestForStation() {
                 },
                 minLength: {
                   value: 10,
-                  message: "Station Registration Number is Minimum 10 Digit",
+                  message: "Station Registration Number is Minimum 10 Digits",
                 },
                 maxLength: {
                   value: 15,
-                  message: "Station Registration Number is Maximum 15 Digit",
+                  message: "Station Registration Number is Maximum 15 Digits",
                 },
               })}
               onKeyUp={() => {
@@ -69,7 +88,12 @@ function RequestForStation() {
             {/* <div className="fs-5 text-light fw-bold my-1">User Id</div> */}
             <input
               className={`form-control   ${errors.userId && "invalid"}`}
-              style={{ width: "300px" }}
+              style={{
+                width: "400px",
+                borderRadius: "20px",
+                height: "50px",
+                fontWeight: "bold",
+              }}
               type="text"
               name="userId"
               placeholder="User Id"
@@ -102,7 +126,12 @@ function RequestForStation() {
             {/* <div className="fs-5 text-light fw-bold my-1">Location</div> */}
             <input
               className={`form-control my-1  ${errors.location && "invalid"}`}
-              style={{ width: "300px" }}
+              style={{
+                width: "400px",
+                borderRadius: "20px",
+                height: "50px",
+                fontWeight: "bold",
+              }}
               type="text"
               name="location"
               placeholder="Location"
@@ -123,7 +152,12 @@ function RequestForStation() {
             {/* <div className="fs-5 text-light fw-bold my-1">Name</div> */}
             <input
               className={`form-control   ${errors.stationName && "invalid"}`}
-              style={{ width: "300px" }}
+              style={{
+                width: "400px",
+                borderRadius: "20px",
+                height: "50px",
+                fontWeight: "bold",
+              }}
               type="text"
               name="stationName"
               placeholder="Station Name"
@@ -148,7 +182,15 @@ function RequestForStation() {
               </small>
             )}
           </div>
-          <button className="btn btn-primary  my-2" style={{ width: "300px" }}>
+          <button
+            className="btn btn-primary  my-2"
+            style={{
+              width: "400px",
+              borderRadius: "20px",
+              height: "50px",
+              fontWeight: "bold",
+            }}
+          >
             Request For Station
           </button>
         </form>
