@@ -7,6 +7,7 @@ import RequestForStation from "./RequestForStation";
 import RegisterCust from "./RegisterCustomer";
 import BookSlot from "./BookSlot";
 import NewStylePage from "./ReqForStation";
+import GMap from "./GMap";
 
 function Home() {
   return (

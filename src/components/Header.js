@@ -10,31 +10,35 @@ import Home from "./Home";
 import { render } from "@testing-library/react";
 import HomeContent from "./HomeContent";
 import BFooter from "./BFooter";
+import GMAP from "./GMap";
+import { Dropdown } from "bootstrap";
+import { FaUserAlt, FaRegUser } from "react-icons/fa";
 
 function Header() {
   return (
     <BrowserRouter>
       <div>
         <Navbar
+          fixed="top"
           collapseOnSelect
           expand="lg"
-          variant="dark"
-          style={{ backgroundColor: "#30a3b0" }}
+          style={{ backgroundColor: "black", height: "70px" }}
         >
-          <Container>
+          <Container className="bg-dark p-0 ">
             <Navbar.Brand
               as={Link}
               to="/"
-              className="fw-bold fs-3"
+              className="fw-bold fs-3 text-light"
               style={{ fontFamily: "cursive" }}
             >
               <img
                 src={i9}
                 alt="img not found"
                 style={{
-                  height: "80px",
-                  width: "150px",
+                  height: "50px",
+                  width: "70px",
                   borderRadius: "50px",
+                  margin: "5px",
                 }}
               />
               SwiftCharge
@@ -46,7 +50,6 @@ function Header() {
                   as={Link}
                   to="/RegisterCustomer"
                   className="fw-bold text-light"
-                  style={{ textDecoration: "underline" }}
                 >
                   Find Charging Point
                 </Nav.Link>
@@ -54,18 +57,39 @@ function Header() {
                   as={Link}
                   to="/RequestForStation"
                   className="fw-bold text-light"
-                  style={{ textDecoration: "underline" }}
                 >
                   Add Charging Point
                 </Nav.Link>
               </Nav>
               <Nav>
-                <Nav.Link
-                  as={Link}
-                  to="/signin"
-                  className="fw-bold text-light"
-                  style={{ textDecoration: "underline" }}
+                <NavDropdown
+                  className="bg-dark "
+                  style={{ borderRadius: "5px", width: "70px" }}
+                  title={
+                    <FaRegUser style={{ width: "20px", height: "20px" }} />
+                  }
+                  id="collasible-nav-dropdown"
                 >
+                  <div className="d-flex justify-content-center align-items-center flex-column">
+                    <NavDropdown.Item
+                      href="/signup"
+                      className="bg-dark text-light mb-1 fw-bold text-center"
+                      style={{ borderRadius: "10px", width: "100px" }}
+                    >
+                      Sign Up
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      href="/signin"
+                      className="bg-dark text-light mb-1 fw-bold text-center"
+                      style={{ borderRadius: "10px", width: "100px" }}
+                    >
+                      Sign In
+                    </NavDropdown.Item>
+                  </div>
+                </NavDropdown>
+              </Nav>
+              {/* <Nav>
+                <Nav.Link as={Link} to="/signin" className="fw-bold text-light">
                   <button className="btn btn-dark"> Sign In</button>
                 </Nav.Link>
                 <Nav.Link
@@ -73,15 +97,14 @@ function Header() {
                   as={Link}
                   to="/signup"
                   className="fw-bold text-light"
-                  style={{ textDecoration: "underline" }}
                 >
                   <button className="btn btn-dark"> Sign Up</button>
                 </Nav.Link>
-              </Nav>
+              </Nav> */}
             </Navbar.Collapse>
           </Container>
         </Navbar>
-
+        {/* <GMap /> */}
         <div>
           <Routes>
             <Route path="/" exact element={<HomeContent />} />

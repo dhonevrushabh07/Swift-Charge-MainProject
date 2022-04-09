@@ -33,17 +33,18 @@ function NewStylePage() {
         >
           Anvi
         </div>
-        <div
-          className="col-5 "
-          style={{ background: "linear-gradient(to right, green, blue)" }}
-        >
+        <div className="col-5 ">
           {/* start of form */}
           <div>
             <div
-              className="col-12 col-md-12 d-flex align-items-center flex-column justify-content-center  "
+              className="col-12 col-md-12 d-flex align-items-center flex-column justify-content-center"
               style={{ height: "100vh" }}
             >
-              <form onSubmit={handleSubmit(onsubmit)} action="">
+              <form
+                onSubmit={handleSubmit(onsubmit)}
+                action=""
+                style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
+              >
                 <div>
                   <h3
                     className="text-back text-center"

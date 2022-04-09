@@ -2,29 +2,54 @@ import { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import i1 from "../images/i1.jpg";
 import "./formBorder.css";
+import axios from "axios";
+
 function RegisterCust() {
   const initialValues = {
-    username: "",
+    name: "",
     email: "",
     phone: "",
     password: "",
     conpassword: "",
   };
-
+  let state = {
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    conpassword: "",
+  };
+  let user = {
+    Name: this.state.uname,
+    email: this.state.email,
+    phone: this.state.phone,
+    password: this.state.password,
+  };
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
   const [formValues, setFormValues] = useState(initialValues);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormValues({ ...formValues, [name]: value });
     console.log(formValues);
+    this.setState({ name: e.target.value });
+    this.setState({ email: e.target.value });
+    this.setState({ phone: e.target.value });
+    this.setState({ password: e.target.value });
+    this.setState({ conpassword: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+
+    await axios.post(`http://localhost:8081/register`, { user }).then((res) => {
+      console.log(res);
+      console.log(res.data);
+    });
   };
 
   useEffect(() => {
@@ -41,12 +66,12 @@ function RegisterCust() {
     const regex3 = /^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/;
     const regex4 =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,10})/;
-    if (!values.username) {
-      errors.username = "Name is required ";
-    } else if (!regex1.test(values.username)) {
-      errors.username = "Name should be charater";
-    } else if (!regex2.test(values.username)) {
-      errors.username =
+    if (!values.name) {
+      errors.name = "Name is required ";
+    } else if (!regex1.test(values.name)) {
+      errors.name = "Name should be charater";
+    } else if (!regex2.test(values.name)) {
+      errors.name =
         "Minimum 2 character and Maximum than 30 character required";
     }
     if (!values.email) {
@@ -89,12 +114,13 @@ function RegisterCust() {
       >
         {/* <h1 className="text-light">This is Registration Page</h1> */}
         <form
-          onSubmit={handleSubmit}
-          className="d-flex bg-light align-items-center justify-content-center  "
+          onSubmit={this.handleSubmit}
+          className="d-flex align-items-center justify-content-center  "
           style={{
-            width: "120vh",
+            width: "600px",
             borderRadius: "20px",
             padding: "20px",
+            backgroundColor: "rgba(255,255,255,0.8)",
           }}
         >
           <div>
@@ -128,12 +154,12 @@ function RegisterCust() {
                     fontWeight: "bold",
                   }}
                   type="text"
-                  name="username"
+                  name="name"
                   placeholder="Name"
-                  value={formValues.username}
-                  onChange={handleChange}
+                  value={formValues.name}
+                  onChange={this.handleChange}
                 />
-                <p className="text-danger">{formErrors.username}</p>
+                <p className="text-danger">{formErrors.name}</p>
               </div>
 
               <div>
@@ -150,7 +176,7 @@ function RegisterCust() {
                   name="email"
                   placeholder="email"
                   value={formValues.email}
-                  onChange={handleChange}
+                  onChange={this.handleChange}
                 />
                 <p className="text-danger">{formErrors.email}</p>
               </div>
@@ -169,7 +195,7 @@ function RegisterCust() {
                   name="phone"
                   placeholder="Phone Number"
                   value={formValues.phone}
-                  onChange={handleChange}
+                  onChange={this.handleChange}
                 />
                 <p className="text-danger">{formErrors.phone}</p>
               </div>
@@ -188,7 +214,7 @@ function RegisterCust() {
                   name="password"
                   placeholder="Password"
                   value={formValues.password}
-                  onChange={handleChange}
+                  onChange={this.handleChange}
                 />
                 <p className="text-danger">{formErrors.password}</p>
               </div>
@@ -207,13 +233,14 @@ function RegisterCust() {
                   name="conpassword"
                   placeholder="Confirm Password"
                   value={formValues.conpassword}
-                  onChange={handleChange}
+                  onChange={this.handleChange}
                 />
                 <p className="text-danger">{formErrors.conpassword}</p>
               </div>
 
               <div>
                 <button
+                  type="submit"
                   className="btn btn-primary m-2"
                   style={{
                     width: "400px",

@@ -36,8 +36,12 @@ function BookSlot() {
         <form
           onSubmit={handleSubmit(onsubmit)}
           action=""
-          className="bg-light d-flex align-items-center flex-column justify-content-center p-5 "
-          style={{ width: "500px", borderRadius: "20px" }}
+          className=" d-flex align-items-center flex-column justify-content-center p-5 "
+          style={{
+            width: "500px",
+            borderRadius: "20px",
+            backgroundColor: "rgba(255,255,255,0.8)",
+          }}
         >
           <div>
             <div>

@@ -28,7 +28,7 @@ function HomeContent() {
           </Card>
         </div>
         <div
-          className="col-md-4 col-12 d-flex justify-content-center align-items-center p-0 m-0"
+          className="col-md-4 col-12 d-flex justify-content-center align-items-center p-0 m-0 border-0"
           style={{ backgroundColor: "cyan" }}
         >
           <p className="text-center fw-bold">

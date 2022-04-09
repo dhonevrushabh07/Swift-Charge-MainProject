@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import "./formBorder.css";
 import i1 from "../images/i1.jpg";
+import { useState } from "react";
 
 function RequestForStation() {
   const {
@@ -11,10 +12,15 @@ function RequestForStation() {
     trigger,
   } = useForm();
 
+  const [requestData, setRequestData] = useState({});
+
   const onsubmit = (data) => {
     console.log(data);
     reset();
   };
+  function submitRequest(e) {
+    e.preventDefault();
+  }
   //console.log(errors);
   return (
     <div
@@ -31,10 +37,15 @@ function RequestForStation() {
         style={{ height: "100vh" }}
       >
         <form
-          onSubmit={handleSubmit(onsubmit)}
+          // onSubmit={handleSubmit(onsubmit)}
+          onSubmit={submitRequest}
           action=""
-          className="bg-light d-flex align-items-center flex-column justify-content-center p-5 "
-          style={{ width: "600px", borderRadius: "20px" }}
+          className=" d-flex align-items-center flex-column justify-content-center p-5 "
+          style={{
+            width: "600px",
+            borderRadius: "20px",
+            backgroundColor: "rgba(255,255,255,0.8)",
+          }}
         >
           <div>
             <h3
@@ -55,6 +66,8 @@ function RequestForStation() {
                 fontWeight: "bold",
               }}
               type="text"
+              value={requestData.registrationNumber}
+              onBeforeInputCapturech
               name="registrationNumber"
               placeholder="Registration Number"
               {...register("registrationNumber", {
@@ -96,6 +109,7 @@ function RequestForStation() {
               }}
               type="text"
               name="userId"
+              value={requestData.userId}
               placeholder="User Id"
               {...register("userId", {
                 required: "User Id Required",
@@ -134,6 +148,7 @@ function RequestForStation() {
               }}
               type="text"
               name="location"
+              value={requestData.location}
               placeholder="Location"
               {...register("location", {
                 required: "Location is Required",
@@ -160,6 +175,7 @@ function RequestForStation() {
               }}
               type="text"
               name="stationName"
+              value={requestData.stationName}
               placeholder="Station Name"
               {...register("stationName", {
                 required: "Station Name is Required",
