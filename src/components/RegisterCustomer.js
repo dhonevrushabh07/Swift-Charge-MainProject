@@ -12,19 +12,19 @@ function RegisterCust() {
     password: "",
     conpassword: "",
   };
-  let state = {
-    name: "",
-    email: "",
-    phone: "",
-    password: "",
-    conpassword: "",
-  };
-  let user = {
-    Name: this.state.uname,
-    email: this.state.email,
-    phone: this.state.phone,
-    password: this.state.password,
-  };
+  // let state = {
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   password: "",
+  //   conpassword: "",
+  // };
+  // let user = {
+  //   Name: this.state.uname,
+  //   email: this.state.email,
+  //   phone: this.state.phone,
+  //   password: this.state.password,
+  // };
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [formValues, setFormValues] = useState(initialValues);
@@ -34,11 +34,11 @@ function RegisterCust() {
 
     setFormValues({ ...formValues, [name]: value });
     console.log(formValues);
-    this.setState({ name: e.target.value });
-    this.setState({ email: e.target.value });
-    this.setState({ phone: e.target.value });
-    this.setState({ password: e.target.value });
-    this.setState({ conpassword: e.target.value });
+    // this.setState({ name: e.target.value });
+    // this.setState({ email: e.target.value });
+    // this.setState({ phone: e.target.value });
+    // this.setState({ password: e.target.value });
+    // this.setState({ conpassword: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -46,10 +46,10 @@ function RegisterCust() {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
 
-    await axios.post(`http://localhost:8081/register`, { user }).then((res) => {
-      console.log(res);
-      console.log(res.data);
-    });
+    //   await axios.post(`http://localhost:8081/register`, { user }).then((res) => {
+    //     console.log(res);
+    //     console.log(res.data);
+    //   });
   };
 
   useEffect(() => {
@@ -114,7 +114,7 @@ function RegisterCust() {
       >
         {/* <h1 className="text-light">This is Registration Page</h1> */}
         <form
-          onSubmit={this.handleSubmit}
+          onSubmit={handleSubmit}
           className="d-flex align-items-center justify-content-center  "
           style={{
             width: "600px",
@@ -157,7 +157,7 @@ function RegisterCust() {
                   name="name"
                   placeholder="Name"
                   value={formValues.name}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
                 <p className="text-danger">{formErrors.name}</p>
               </div>
@@ -176,7 +176,7 @@ function RegisterCust() {
                   name="email"
                   placeholder="email"
                   value={formValues.email}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
                 <p className="text-danger">{formErrors.email}</p>
               </div>
@@ -195,7 +195,7 @@ function RegisterCust() {
                   name="phone"
                   placeholder="Phone Number"
                   value={formValues.phone}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
                 <p className="text-danger">{formErrors.phone}</p>
               </div>
@@ -214,7 +214,7 @@ function RegisterCust() {
                   name="password"
                   placeholder="Password"
                   value={formValues.password}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
                 <p className="text-danger">{formErrors.password}</p>
               </div>
@@ -233,7 +233,7 @@ function RegisterCust() {
                   name="conpassword"
                   placeholder="Confirm Password"
                   value={formValues.conpassword}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
                 <p className="text-danger">{formErrors.conpassword}</p>
               </div>
