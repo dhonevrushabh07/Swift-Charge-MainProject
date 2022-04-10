@@ -8,14 +8,13 @@ import BFooter from "./components/BFooter";
 import Home from "./components/Home";
 import HomeContent from "./components/HomeContent";
 import NewStylePage from "./components/ReqForStation";
-import ForgotPassword from "./components/ForgetPassword";
+import Paymemt from "./components/Payment";
 
 function App() {
   return (
     <div>
       <Header />
-
-      {/* <ForgotPassword /> */}
+      {/* <Paymemt /> */}
       {<BFooter />}
     </div>
   );

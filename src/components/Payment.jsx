@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-function ForgotPassword() {
+function Payment() {
   const {
     register,
     handleSubmit,
@@ -158,4 +158,4 @@ function ForgotPassword() {
   );
 }
 
-export default ForgotPassword;
+export default Payment;
