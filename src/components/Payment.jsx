@@ -50,14 +50,14 @@ function Payment() {
               {...register("name", {
                 required: "Please Enter Name",
                 pattern: {
-                  value: /^[A-Z]([a-z]|[A-Z]){3,30}$/,
+                  value: /^[A-Z]([a-z ]|[A-Z ]){5,50}$/,
                   message:
-                    "Only Characters are allowed Min : 3 and Max :30 Char",
+                    "Only Characters are allowed Min : 5 and Max :50 Char",
                 },
               })}
-              // onKeyUp={() => {
-              //   trigger("name");
-              // }}
+              onKeyUp={() => {
+                trigger("name");
+              }}
             />
             {errors.name && (
               <small className="text-danger fs-6 p-1">
@@ -81,9 +81,9 @@ function Payment() {
                   message: "Only 16 Digit Number is allowed",
                 },
               })}
-              // onKeyUp={() => {
-              //   trigger("cardno");
-              // }}
+              onKeyUp={() => {
+                trigger("cardno");
+              }}
             />
             {errors.cardno && (
               <small className="text-danger fs-6 p-1">
@@ -108,9 +108,9 @@ function Payment() {
                     message: "Allowed Date format MM/YY",
                   },
                 })}
-                // onKeyUp={() => {
-                //   trigger("expirydate");
-                // }}
+                onKeyUp={() => {
+                  trigger("expirydate");
+                }}
               />
               {errors.expirydate && (
                 <small className="text-danger fs-6 p-1">
@@ -124,7 +124,7 @@ function Payment() {
               <label className="mb-1 fs-5">CVV</label>
               <input
                 className={`form-control mb-2 ${errors.cvv && "invalid"}`}
-                type="text"
+                type="password"
                 name="cvv"
                 value={requestData.cvv}
                 placeholder="CVV"
@@ -136,9 +136,9 @@ function Payment() {
                     message: " 3 Digit ",
                   },
                 })}
-                // onKeyUp={() => {
-                //   trigger("cvv");
-                // }}
+                onKeyUp={() => {
+                  trigger("cvv");
+                }}
               />
               {errors.cvv && (
                 <small className="text-danger fs-6 p-1">
