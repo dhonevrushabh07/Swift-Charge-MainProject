@@ -25,10 +25,10 @@ function RequestForStation() {
   return (
     <div
       style={{
-        backgroundImage: `url(${i1})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundColor: "rgba(0,0,0,0.3)",
+        //  backgroundImage: `url(${i1})`,
+        //  backgroundRepeat: "no-repeat",
+        //  backgroundSize: "cover",
+        backgroundColor: "rgba(255,255,255,0.9)",
         height: "100vh",
       }}
     >
@@ -43,14 +43,13 @@ function RequestForStation() {
           className=" d-flex align-items-center flex-column justify-content-center p-5 "
           style={{
             width: "600px",
-            borderRadius: "20px",
-            backgroundColor: "rgba(255,255,255,0.5)",
+            backgroundColor: "whitesmoke",
+            border: "10px solid white",
+            borderRadius: "10px",
           }}
         >
           <div>
-            <h3 className="text-dark text-center p-2 fw-bold">
-              Station Registration
-            </h3>
+            <h3 className="text-dark text-center p-2">Station Registration</h3>
             {/* <div className="fs-5 text-light fw-bold">Registration Number</div> */}
             <input
               className={`form-control my-1  ${
@@ -58,9 +57,8 @@ function RequestForStation() {
               }`}
               style={{
                 width: "400px",
-                borderRadius: "10px",
+                borderRadius: "5px",
                 height: "45px",
-                fontWeight: "bold",
                 border: "2px solid black",
               }}
               type="text"
@@ -84,9 +82,6 @@ function RequestForStation() {
                   message: "Station Registration Number is Maximum 15 Digits",
                 },
               })}
-              onKeyUp={() => {
-                trigger("registrationNumber");
-              }}
             />
             {errors.registrationNumber && (
               <small className="text-danger fs-6 p-1">
@@ -98,40 +93,36 @@ function RequestForStation() {
           <div>
             {/* <div className="fs-5 text-light fw-bold my-1">User Id</div> */}
             <input
-              className={`form-control   ${errors.userId && "invalid"}`}
+              className={`form-control   ${errors.totalPoints && "invalid"}`}
               style={{
                 width: "400px",
-                borderRadius: "10px",
+                borderRadius: "5px",
                 height: "45px",
-                fontWeight: "bold",
                 border: "2px solid black",
               }}
-              type="text"
-              name="userId"
-              value={requestData.userId}
-              placeholder="User Id"
-              {...register("userId", {
-                required: "User Id Required",
+              type="number"
+              name="totalPoints"
+              value={requestData.totalPoints}
+              placeholder="Total Points"
+              {...register("totalPoints", {
+                required: "Total Points Required",
                 pattern: {
-                  value: /^[0-9]*$/,
+                  value: /^[0-9]{1,2}$/,
                   message: "Only Numbers are allowed",
                 },
-                maxLength: {
-                  value: 5,
-                  message: "User Id length is Maximum 5 Digit",
+                max: {
+                  value: 99,
+                  message: "Maximum 99 Points are allowed",
                 },
-                minLength: {
+                min: {
                   value: 1,
-                  message: "User Id length is minimum 1 Digit",
+                  message: "Minimum 1 Point is required",
                 },
               })}
-              onKeyUp={() => {
-                trigger("userId");
-              }}
             />
-            {errors.userId && (
+            {errors.totalPoints && (
               <small className="text-danger fs-6 p-1">
-                {errors.userId.message}{" "}
+                {errors.totalPoints.message}{" "}
               </small>
             )}
           </div>
@@ -141,8 +132,7 @@ function RequestForStation() {
               className={`form-control my-1  ${errors.latittude && "invalid"}`}
               style={{
                 width: "300px",
-                fontWeight: "bold",
-                borderRadius: "10px",
+                borderRadius: "5px",
                 height: "45px",
                 width: "400px",
                 border: "2px solid black",
@@ -157,9 +147,6 @@ function RequestForStation() {
                   message: "Please Enter Valid Lattitude",
                 },
               })}
-              onKeyUp={() => {
-                trigger("latittude");
-              }}
             />
             {errors.latittude && (
               <small className="text-danger fs-6 p-1">
@@ -173,8 +160,7 @@ function RequestForStation() {
               className={`form-control my-1  ${errors.longitude && "invalid"}`}
               style={{
                 width: "300px",
-                fontWeight: "bold",
-                borderRadius: "10px",
+                borderRadius: "5px",
                 height: "45px",
                 width: "400px",
                 border: "2px solid black",
@@ -189,9 +175,6 @@ function RequestForStation() {
                   message: "Please Enter Valid Longitude",
                 },
               })}
-              onKeyUp={() => {
-                trigger("longitude");
-              }}
             />
             {errors.longitude && (
               <small className="text-danger fs-6 p-1">
@@ -206,9 +189,8 @@ function RequestForStation() {
               className={`form-control   ${errors.stationName && "invalid"}`}
               style={{
                 width: "400px",
-                borderRadius: "10px",
+                borderRadius: "5px",
                 height: "45px",
-                fontWeight: "bold",
                 border: "2px solid black",
               }}
               type="text"
@@ -226,9 +208,6 @@ function RequestForStation() {
                   message: "Station name contains maximum 30 character",
                 },
               })}
-              onKeyUp={() => {
-                trigger("stationName");
-              }}
             />
             {errors.stationName && (
               <small className="text-danger fs-6 p-1">
@@ -237,12 +216,11 @@ function RequestForStation() {
             )}
           </div>
           <button
-            className="btn btn-primary  my-2"
+            className="btn btn-dark  my-2"
             style={{
               width: "400px",
-              borderRadius: "10px",
+              borderRadius: "5px",
               height: "45px",
-              fontWeight: "bold",
             }}
           >
             Request For Station
