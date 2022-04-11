@@ -38,17 +38,19 @@ function RequestForStation() {
       >
         <form
           // onSubmit={handleSubmit(onsubmit)}
-          onSubmit={submitRequest}
+          onSubmit={handleSubmit(submitRequest)}
           action=""
           className=" d-flex align-items-center flex-column justify-content-center p-5 "
           style={{
             width: "600px",
             borderRadius: "20px",
-            backgroundColor: "rgba(255,255,255,0.8)",
+            backgroundColor: "rgba(255,255,255,0.5)",
           }}
         >
           <div>
-            <h3 className="text-dark text-center p-2">Station Registration</h3>
+            <h3 className="text-dark text-center p-2 fw-bold">
+              Station Registration
+            </h3>
             {/* <div className="fs-5 text-light fw-bold">Registration Number</div> */}
             <input
               className={`form-control my-1  ${
@@ -56,9 +58,10 @@ function RequestForStation() {
               }`}
               style={{
                 width: "400px",
-                borderRadius: "20px",
-                height: "50px",
+                borderRadius: "10px",
+                height: "45px",
                 fontWeight: "bold",
+                border: "2px solid black",
               }}
               type="text"
               value={requestData.registrationNumber}
@@ -98,9 +101,10 @@ function RequestForStation() {
               className={`form-control   ${errors.userId && "invalid"}`}
               style={{
                 width: "400px",
-                borderRadius: "20px",
-                height: "50px",
+                borderRadius: "10px",
+                height: "45px",
                 fontWeight: "bold",
+                border: "2px solid black",
               }}
               type="text"
               name="userId"
@@ -138,9 +142,10 @@ function RequestForStation() {
               style={{
                 width: "300px",
                 fontWeight: "bold",
-                borderRadius: "50px",
-                height: "50px",
+                borderRadius: "10px",
+                height: "45px",
                 width: "400px",
+                border: "2px solid black",
               }}
               type="text"
               name="latittude"
@@ -169,9 +174,10 @@ function RequestForStation() {
               style={{
                 width: "300px",
                 fontWeight: "bold",
-                borderRadius: "50px",
-                height: "50px",
+                borderRadius: "10px",
+                height: "45px",
                 width: "400px",
+                border: "2px solid black",
               }}
               type="text"
               name="longitude"
@@ -200,9 +206,10 @@ function RequestForStation() {
               className={`form-control   ${errors.stationName && "invalid"}`}
               style={{
                 width: "400px",
-                borderRadius: "20px",
-                height: "50px",
+                borderRadius: "10px",
+                height: "45px",
                 fontWeight: "bold",
+                border: "2px solid black",
               }}
               type="text"
               name="stationName"
@@ -233,8 +240,8 @@ function RequestForStation() {
             className="btn btn-primary  my-2"
             style={{
               width: "400px",
-              borderRadius: "20px",
-              height: "50px",
+              borderRadius: "10px",
+              height: "45px",
               fontWeight: "bold",
             }}
           >

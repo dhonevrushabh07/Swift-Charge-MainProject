@@ -50,7 +50,7 @@ function Payment() {
               {...register("name", {
                 required: "Please Enter Name",
                 pattern: {
-                  value: /^[A-Z]([a-z ]|[A-Z ]){5,50}$/,
+                  value: /^[A-Z ]([a-z ]|[A-Z ]){5,50}$/,
                   message:
                     "Only Characters are allowed Min : 5 and Max :50 Char",
                 },
