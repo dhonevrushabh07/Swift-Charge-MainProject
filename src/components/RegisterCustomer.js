@@ -105,7 +105,7 @@ function RegisterCust() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundColor: "rgba(0,0,0,0.3)",
-        height: "130vh",
+        height: "100vh",
       }}
     >
       <div

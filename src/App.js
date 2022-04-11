@@ -9,13 +9,18 @@ import Home from "./components/Home";
 import HomeContent from "./components/HomeContent";
 import NewStylePage from "./components/ReqForStation";
 import Paymemt from "./components/Payment";
+import MyBookings from "./components/MyBookings";
+import Admin from "./components/Admin";
 
 function App() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       {/* <Paymemt /> */}
-      {<BFooter />}
+      {/* <MyBookings /> */}
+      <RequestForStation />
+      {/* <Admin /> */}
+      {/* {<BFooter />} */}
     </div>
   );
 }

@@ -48,12 +48,7 @@ function RequestForStation() {
           }}
         >
           <div>
-            <h3
-              className="text-dark text-center"
-              style={{ textDecoration: "underline" }}
-            >
-              Station Registration
-            </h3>
+            <h3 className="text-dark text-center p-2">Station Registration</h3>
             {/* <div className="fs-5 text-light fw-bold">Registration Number</div> */}
             <input
               className={`form-control my-1  ${
@@ -137,32 +132,68 @@ function RequestForStation() {
             )}
           </div>
           <div>
-            {/* <div className="fs-5 text-light fw-bold my-1">Location</div> */}
+            {/* Latittude*/}
             <input
-              className={`form-control my-1  ${errors.location && "invalid"}`}
+              className={`form-control my-1  ${errors.latittude && "invalid"}`}
               style={{
-                width: "400px",
-                borderRadius: "20px",
-                height: "50px",
+                width: "300px",
                 fontWeight: "bold",
+                borderRadius: "50px",
+                height: "50px",
+                width: "400px",
               }}
               type="text"
-              name="location"
-              value={requestData.location}
-              placeholder="Location"
-              {...register("location", {
-                required: "Location is Required",
+              name="latittude"
+              placeholder="Latittude"
+              {...register("latittude", {
+                required: "Latittude is Required",
+                pattern: {
+                  value: /^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}/,
+                  message: "Please Enter Valid Lattitude",
+                },
               })}
               onKeyUp={() => {
-                trigger("location");
+                trigger("latittude");
               }}
             />
-            {errors.location && (
+            {errors.latittude && (
               <small className="text-danger fs-6 p-1">
-                {errors.location.message}
+                {errors.latittude.message}
               </small>
             )}
           </div>
+          <div>
+            {/* Longitude*/}
+            <input
+              className={`form-control my-1  ${errors.longitude && "invalid"}`}
+              style={{
+                width: "300px",
+                fontWeight: "bold",
+                borderRadius: "50px",
+                height: "50px",
+                width: "400px",
+              }}
+              type="text"
+              name="longitude"
+              placeholder="Longitude"
+              {...register("longitude", {
+                required: "Longitude is Required",
+                pattern: {
+                  value: /^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}/,
+                  message: "Please Enter Valid Longitude",
+                },
+              })}
+              onKeyUp={() => {
+                trigger("longitude");
+              }}
+            />
+            {errors.longitude && (
+              <small className="text-danger fs-6 p-1">
+                {errors.longitude.message}
+              </small>
+            )}
+          </div>
+
           <div>
             {/* <div className="fs-5 text-light fw-bold my-1">Name</div> */}
             <input

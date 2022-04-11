@@ -46,10 +46,7 @@ function NewStylePage() {
                 style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
               >
                 <div>
-                  <h3
-                    className="text-back text-center"
-                    style={{ textDecoration: "underline" }}
-                  >
+                  <h3 className="text-back text-center">
                     Station Registration
                   </h3>
                   {/* <div className="fs-5 text-light fw-bold">Registration Number</div> */}
@@ -136,10 +133,10 @@ function NewStylePage() {
                   )}
                 </div>
                 <div>
-                  {/* <div className="fs-5 text-light fw-bold my-1">Location</div> */}
+                  {/* Latittude*/}
                   <input
                     className={`form-control my-1  ${
-                      errors.location && "invalid"
+                      errors.latittude && "invalid"
                     }`}
                     style={{
                       width: "300px",
@@ -149,21 +146,51 @@ function NewStylePage() {
                       width: "400px",
                     }}
                     type="text"
-                    name="location"
-                    placeholder="Location"
-                    {...register("location", {
-                      required: "Location is Required",
+                    name="latittude"
+                    placeholder="Latittude"
+                    {...register("latittude", {
+                      required: "Latittude is Required",
                     })}
                     onKeyUp={() => {
-                      trigger("location");
+                      trigger("latittude");
                     }}
                   />
-                  {errors.location && (
+                  {errors.latittude && (
                     <small className="text-danger fs-6 p-1">
-                      {errors.location.message}
+                      {errors.latittude.message}
                     </small>
                   )}
                 </div>
+                <div>
+                  {/* Longitude*/}
+                  <input
+                    className={`form-control my-1  ${
+                      errors.longitude && "invalid"
+                    }`}
+                    style={{
+                      width: "300px",
+                      fontWeight: "bold",
+                      borderRadius: "50px",
+                      height: "50px",
+                      width: "400px",
+                    }}
+                    type="text"
+                    name="longitude"
+                    placeholder="Longitude"
+                    {...register("longitude", {
+                      required: "Longitude is Required",
+                    })}
+                    onKeyUp={() => {
+                      trigger("longitude");
+                    }}
+                  />
+                  {errors.longitude && (
+                    <small className="text-danger fs-6 p-1">
+                      {errors.longitude.message}
+                    </small>
+                  )}
+                </div>
+
                 <div>
                   {/* <div className="fs-5 text-light fw-bold my-1">Name</div> */}
                   <input
