@@ -16,10 +16,9 @@ function App() {
   return (
     <div>
       {/* <Header /> */}
-
-      {/* <MyBookings /> */}
-      <RequestForStation />
-      <Paymemt />
+      <MyBookings />
+      {/* <RequestForStation /> */}
+      {/* <Paymemt />  */}
       {/* <Admin /> */}
       {/* {<BFooter />} */}
     </div>
