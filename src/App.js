@@ -11,16 +11,18 @@ import NewStylePage from "./components/ReqForStation";
 import Paymemt from "./components/Payment";
 import MyBookings from "./components/MyBookings";
 import Admin from "./components/Admin";
+import MyStation from "./components/MyStation";
 
 function App() {
   return (
     <div>
       {/* <Header /> */}
-      <MyBookings />
+      {/* <MyBookings /> */}
       {/* <RequestForStation /> */}
       {/* <Paymemt />  */}
       {/* <Admin /> */}
       {/* {<BFooter />} */}
+      <MyStation />
     </div>
   );
 }
